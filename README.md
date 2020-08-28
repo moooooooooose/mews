@@ -1,2 +1,2 @@
 # MEWS
- Machine learning convolutional neural net natural image processing 
+ **m**achine learning convolutional neural n**e**t natural wo**w** image proces**s**ing 
