@@ -6,6 +6,7 @@ import (
 	"image"
 )
 
+//go:generate moq -out pipeline_moq_test.go . ProcessorPipeline
 type ProcessorPipeline interface {
 	AddAction(ImageAction)
 	Transform(image.Image) (image.Image, error)
@@ -23,11 +24,11 @@ func NewProcessorPipeline() ProcessorPipeline {
 	}
 }
 
-func (p *processorPipeline) AddAction(processor ImageAction) {
-	if processor == nil {
+func (p *processorPipeline) AddAction(action ImageAction) {
+	if action == nil {
 		return
 	}
-	p.imageProcesses = append(p.imageProcesses, processor)
+	p.imageProcesses = append(p.imageProcesses, action)
 }
 
 func (p processorPipeline) Transform(image image.Image) (image.Image, error) {
