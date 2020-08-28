@@ -1,18 +1,3 @@
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-
-# Test binary, built with `go test -c`
-*.test
-
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
-
-.idea
-
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -32,7 +17,6 @@
 .env.development.local
 .env.test.local
 .env.production.local
-.vscode
 
 npm-debug.log*
 yarn-debug.log*
