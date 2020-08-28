@@ -1,13 +1,18 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-// import logo from './logo.svg';
-import Form from "./components/Form.js";
 import "./App.css";
 
+import { useRoutes, A } from "hookrouter";
+import routes from "./Routes";
+
 function App() {
+  const routeResult = useRoutes(routes);
   return (
     <Wrapper>
-      <Form />
+      <A href="/">Home</A>
+      <A href="/login">Log in</A>
+      <A href="/logout">Log out</A>
+      {routeResult || <Section />}
     </Wrapper>
   );
 }
@@ -31,6 +36,10 @@ const Wrapper = styled.section`
   background: linear-gradient(270deg, #46e8be, #e8ba46, #e846d4);
   background-size: 600% 600%;
   animation: ${HeaderKeyFrame} 120s ease infinite;
+`;
+
+const Section = styled.section`
+  background: #eef;
 `;
 
 export default App;
