@@ -27,7 +27,6 @@ func NewActionBoundResize(options ...BoundResizeOptions) (ImageAction, error) {
 	actionBoundResize.Height = DefaultHeight
 	actionBoundResize.Width = DefaultWidth
 
-	// get any optional params
 	for _, option := range options {
 		err := option(actionBoundResize)
 		if err != nil {
